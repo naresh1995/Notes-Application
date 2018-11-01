@@ -3,8 +3,6 @@ import './App.css';
 import { Note } from './Model';
 import NoteBlock from './Components/NoteBlock';
 import 'bootstrap/dist/css/bootstrap.css';
-import ReactTooltip from 'react-tooltip'
-import {findDOMNode} from 'react-dom'
 import 'react-notifications/lib/notifications.css';
 import 'react-notifications/dist/react-notifications.css';
 import 'react-notifications/dist/react-notifications.js';
@@ -37,10 +35,6 @@ class App extends Component {
 
       }
     })
-  }
-
-  componentDidUpdate(){
-    ReactTooltip.hide(findDOMNode(this.refs.expand))
   }
 
   addNewNote(previousExpandIndex){

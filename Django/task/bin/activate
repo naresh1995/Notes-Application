@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/naresh/Documents/Projects/Django/task"
+VIRTUAL_ENV="/Users/naresh/Documents/GitHub/Notes-Application/Django/task"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

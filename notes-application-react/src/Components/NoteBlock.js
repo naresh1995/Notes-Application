@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Note } from '../Model';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
-import ReactTooltip from 'react-tooltip'
 const WAIT_INTERVAL = 1000
 
 class NoteBlock extends Component {
@@ -147,14 +146,15 @@ class NoteBlock extends Component {
 		var buttonClass = this.state.expanded ? "input-button-full-width" : "input-button";
 		var formClass = this.state.expanded ? "form-group-full-width" : "form-group";
 		var inputClass = this.state.expanded ? "input-field-full-width" : "input-field";
+		var buttonType = this.state.expanded ? "↙️" : "↗️";
 
         return(
 	        <div className={formClass}>
 	          <div className= "input-container">
 	            <input type="text" className={inputClass} name="title" placeholder="Note Title" value={note.title} onChange={this.titleChange.bind(this)}/>
-	            <button type="button" className={"btn btn-sm " + buttonClass} ref = "expand" data-tip='Delete Note' data-for='delete' onClick={this.deleteNote.bind(this)}>❌</button>
-	            <button type="button" className={"btn btn-sm " + buttonClass} data-tip='Expand Note' data-for='expand' onClick={this.toggleExpandNote.bind(this)}>↗️</button>
-	            <button type="button" className={"btn btn-sm " + buttonClass} data-tip='Version History' data-for='history' onClick={this.showVersions.bind(this)}>🕒</button>
+	            <button type="button" className={"btn btn-sm " + buttonClass} onClick={this.deleteNote.bind(this)}>❌</button>
+	            <button type="button" className={"btn btn-sm " + buttonClass} onClick={this.toggleExpandNote.bind(this)}>{buttonType}</button>
+	            <button type="button" className={"btn btn-sm " + buttonClass} onClick={this.showVersions.bind(this)}>🕒</button>
 	          </div>
 	          <div className="notebox">
 	          	<textarea onChange={this.noteChange.bind(this)} className="form-control text-area" rows="10" value={note.notes}/>

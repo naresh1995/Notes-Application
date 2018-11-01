@@ -1,4 +1,4 @@
-#!/Users/naresh/Documents/Projects/Django/task/bin/python
+#!/Users/naresh/Documents/GitHub/Notes-Application/Django/task/bin/python
 
 import sys
 import getopt
